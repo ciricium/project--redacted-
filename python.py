@@ -1,6 +1,3 @@
-#its python
-#just throw it into a web interpreter
-#trust me its pain without
 
 table = {"01": "a", "02": "b", "03": "c", "04": "d", "05": "e", "06": "f", "07": "g", "08": "h", "09": "i", "10": "j", "11": "k", "12": "l", "13": "m", "14": "n", "15": "o", "16": "p", "17": "q", "18": "r", "19": "s", "20": "t", "21": "u", "22": "v", "23": "w", "23": "w", "24": "x", "25": "y", "26": "z", "27": " "}
 
@@ -18,6 +15,10 @@ def decode(string):
 
     string = ""
     decoded = ""
+
+    if len(flipped) < len(xto8):
+        flipped = flipped + "0"
+
     for i in flipped:
         string += i
         if len(string) == 2:
@@ -34,6 +35,9 @@ def encode(string):
     add8 = str(int(div2) + 8)
     yis4 = add8.replace("4", "y")
     eightis4 = yis4.replace("8", "x")
+
+    if len(eightis4) < len(result):
+        eightis4 = "0" + eightis4
 
     return eightis4
 
